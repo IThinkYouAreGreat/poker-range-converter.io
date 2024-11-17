@@ -1,13 +1,10 @@
 import { Combo, ParsedRange } from './../types/types';
 import { formatPioRange, removeSpace } from './utils';
 
-
 export const convertPioToMonker = (pioRange: string): string => {
 
     pioRange = formatPioRange(removeSpace(pioRange));
     const combos = pioRange.split(",").map(combo => combo.split(":"));
-    console.log(1, combos)
-    // return "AK:08"
 
     for (const combo of combos) {
         if (combo.length === 1) {
@@ -25,7 +22,6 @@ export const convertPioToMonker = (pioRange: string): string => {
             parsedRange.push([`${combo[0]}o`, parseFloat(combo[1])]);
         }
     }
-    console.log(2, parsedRange)
 
     const resultCombos = parsedRange
         .filter(([combo]) => COMBOS.includes(combo))
@@ -44,8 +40,6 @@ export const convertPioToMonker = (pioRange: string): string => {
                 return `${c1}c${c2}d@${frequency},${c1}c${c2}h@${frequency},${c1}c${c2}s@${frequency},${c1}d${c2}c@${frequency},${c1}d${c2}h@${frequency},${c1}d${c2}s@${frequency},${c1}h${c2}c@${frequency},${c1}h${c2}d@${frequency},${c1}h${c2}s@${frequency},${c1}s${c2}c@${frequency},${c1}s${c2}d@${frequency},${c1}s${c2}h@${frequency}`;
             }
         });
-
-        console.log(3, resultCombos)
 
     return resultCombos.join(",");
 }

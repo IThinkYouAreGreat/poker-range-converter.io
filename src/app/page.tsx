@@ -6,6 +6,8 @@ import {
   convertPioToMonker, convertPioVer2ToMonker, convertPioToMonkerVer2, convertPioToGtoplus
 } from "@/utils/converter";
 import FormatDropdown from "@/components/formatDropDown";
+import { RANGE_FORMAT_PLACE_HOLDERS } from "@/constants/constants";
+
 
 const Index = () => {
 
@@ -26,7 +28,7 @@ const Index = () => {
           <textarea
             value={inputRange}
             onChange={handleTextareaChange}
-            placeholder="PIOSolver"
+            placeholder={RANGE_FORMAT_PLACE_HOLDERS.pio}
             rows={5}
             cols={30}
           />
@@ -37,8 +39,7 @@ const Index = () => {
           <div>
           <textarea
             value={outputRange}
-            // onChange={handleTextareaChange}
-            placeholder="Output Range"
+            placeholder={RANGE_FORMAT_PLACE_HOLDERS.monker}
             rows={5}
             cols={30}
             readOnly
