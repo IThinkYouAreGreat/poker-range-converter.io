@@ -6,7 +6,7 @@ export const isMonkerRangeFormat = () => {
 
 }
 
-export const isMonkeratRangeFormat = () => {
+export const isMonkerVer2RangeFormat = () => {
 
 }
 
